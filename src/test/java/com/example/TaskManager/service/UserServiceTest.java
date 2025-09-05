@@ -1,9 +1,10 @@
 package com.example.TaskManager.service;
 
-import com.example.Model.User;
-import com.example.Model.dao.UserEntity;
+
+import com.example.Repository.dao.UserEntity;
 import com.example.Repository.UserRepository;
 import com.example.Service.UserService;
+import com.example.Service.model.UserDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -35,12 +36,18 @@ public class UserServiceTest {
         List<UserEntity> usersFromDb = new ArrayList<>();
         usersFromDb.add(expectedFromDb);
         Mockito.when(this.repository.findAll()).thenReturn(usersFromDb);
-        List<User> expectedUsers = service.getAllUsers();
+        List<UserDto> expectedUsers = service.getAllUsers();
         Assertions.assertEquals(usersFromDb.size(),expectedUsers.size());
-        User actualUser = expectedUsers.get(0);
+        UserDto actualUser = expectedUsers.get(0);
         Assertions.assertEquals(expectedFromDb.getId(), actualUser.getId());
         Assertions.assertEquals(expectedFromDb.getFirstName(), actualUser.getFirstName());
         Assertions.assertEquals(expectedFromDb.getLastName(), actualUser.getLastName());
         Assertions.assertEquals(expectedFromDb.getProfession(), actualUser.getProfession());
+    }
+
+    @Test
+    void deleteUserById(){
+        this.service.deleteUserById(12L);
+        Mockito.verify(this.repository).deleteById(12L);
     }
 }

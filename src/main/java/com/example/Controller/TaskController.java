@@ -1,7 +1,7 @@
 package com.example.Controller;
 
-import com.example.Model.Task;
 import com.example.Service.TaskService;
+import com.example.Service.model.TaskDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,19 +17,19 @@ public class TaskController {
     }
 
     @GetMapping("/api/tasks")
-    public ResponseEntity<List<Task>> gelAllTasks() {
+    public ResponseEntity<List<TaskDto>> gelAllTasks() {
         return ResponseEntity.ok(taskService.gelAllTasks());
     }
 
     @PostMapping("/api/tasks")
-    public void createTask(@RequestBody Task taskRequest) {
+    public void createTask(@RequestBody TaskDto taskRequest) {
         this.taskService.createOrUpdateTask(taskRequest);
     }
 
 
     @PutMapping("/api/tasks/{id}")
     public ResponseEntity updateTask(@PathVariable("id") String taskId,
-                                     @RequestBody Task taskRequest) {
+                                     @RequestBody TaskDto taskRequest) {
         this.taskService.createOrUpdateTask(taskRequest);
         return ResponseEntity.ok().build();
     }

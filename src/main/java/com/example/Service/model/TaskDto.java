@@ -1,17 +1,11 @@
-package com.example.Model.dao;
+package com.example.Service.model;
 
-import jakarta.persistence.*;
+import java.util.Objects;
 
-@Entity(name = "tasks")
-public class TaskEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TaskDto {
     private Long id;
-    @Column
     private String title;
-    @Column
     private String description;
-    @Column
     private boolean completed;
 
     public Long getId() {
@@ -44,5 +38,18 @@ public class TaskEntity {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TaskDto taskDto = (TaskDto) o;
+        return completed == taskDto.completed && Objects.equals(id, taskDto.id) && Objects.equals(title, taskDto.title) && Objects.equals(description, taskDto.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, completed);
     }
 }

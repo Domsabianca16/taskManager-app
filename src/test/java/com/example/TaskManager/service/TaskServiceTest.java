@@ -1,7 +1,7 @@
 package com.example.TaskManager.service;
 
 import com.example.Model.Task;
-import com.example.Model.dao.TaskEntity;
+import com.example.Repository.dao.TaskEntity;
 import com.example.Repository.TaskRepository;
 import com.example.Service.TaskService;
 import org.junit.jupiter.api.Assertions;
@@ -52,7 +52,12 @@ import java.util.List;
         Assertions.assertEquals(expectedFromDb.getDescription(),actualTask.getDescription());
         Assertions.assertEquals(expectedFromDb.getTitle(),actualTask.getTitle());
         Assertions.assertEquals(expectedFromDb.isCompleted(),actualTask.isCompleted());
+    }
 
+    @Test
+    void deleteTaskById(){
+        this.service.deleteTaskById(100L);
+        Mockito.verify(this.repository).deleteById(100L);
     }
 
 }

@@ -1,21 +1,31 @@
-package com.example.Model;
+package com.example.Repository.dao;
+
+import com.example.Service.model.TaskDto;
+import jakarta.persistence.*;
 
 import java.util.Objects;
+import java.util.Set;
 
-public class User {
+@Entity(name = "users")
+public class UserEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String firstName;
+    @Column
     private String lastName;
+    @Column
     private String profession;
+    @OneToMany(mappedBy = "userEntity")
+    private Set<TaskEntity> tasks;
 
-    public User() {
+    public Set<TaskEntity> getTasks() {
+        return tasks;
     }
 
-    public User(Long id, String firstName, String lastName, String profession) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.profession = profession;
+    public void setTasks(Set<TaskEntity> tasks) {
+        this.tasks = tasks;
     }
 
     public Long getId() {
@@ -51,25 +61,15 @@ public class User {
     }
 
     @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", profession='" + profession + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(profession, user.profession);
+        UserEntity that = (UserEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(profession, that.profession) && Objects.equals(tasks, that.tasks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, profession);
+        return Objects.hash(id, firstName, lastName, profession, tasks);
     }
 }

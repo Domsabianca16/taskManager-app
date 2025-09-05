@@ -1,22 +1,29 @@
-package com.example.Model;
+package com.example.Repository.dao;
+
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
-public class Task {
+@Entity(name = "tasks")
+public class TaskEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String title;
+    @Column
     private String description;
+    @Column
     private boolean completed;
+    @ManyToOne
+    private UserEntity userEntity;
 
-//    public Task(Long id, String title, String description, boolean completed) {
-//        this.id = id;
-//        this.title = title;
-//        this.description = description;
-//        this.completed = completed;
-//    }
+    public UserEntity getUserEntity() {
+        return userEntity;
+    }
 
-    public Task() {
-
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 
     public Long getId() {
@@ -52,21 +59,11 @@ public class Task {
     }
 
     @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", completed=" + completed +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Task task = (Task) o;
-        return completed == task.completed && Objects.equals(id, task.id) && Objects.equals(title, task.title) && Objects.equals(description, task.description);
+        TaskEntity entity = (TaskEntity) o;
+        return completed == entity.completed && Objects.equals(id, entity.id) && Objects.equals(title, entity.title) && Objects.equals(description, entity.description) ;
     }
 
     @Override
