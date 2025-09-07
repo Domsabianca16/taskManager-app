@@ -2,11 +2,6 @@
 
 Task Manager is a Spring Boot web application that allows users to manage tasks efficiently. Users can create, view, update and delete tasks through a clean REST API.
 
-## 🚧 Status
-
-This application is currently a **work in progress** and is not fully completed yet.  
-Upcoming features include **relationships between entities and database tables**, such as one-to-many or many-to-many associations.
-
 ## Features
 
 ✅ **Full CRUD operations**: Create, Read, Update, Delete
@@ -14,11 +9,17 @@ Upcoming features include **relationships between entities and database tables**
                              - Business Logic Layer: @Service
                              - Data Access Layer: @Repository -> for interaction with the database using JPA
 ✅ **Data persistence** with PostgreSQL
+✅ **API Documentation** with Swagger(OpenAI)
+✅ **Application Monitoring** with Spring Boot Actuator
+✅ **Centralized Logging** with Logback
    
 ## 🔧 Technologies Used 
 
 ⚙️ Java 17+
 🍃 Spring Boot
+✅ Spring Boot Actuator
+⚫️ Swagger
+📑 Logback
 🐘 PostgreSQL (managed via **DBeaver** or **pgAdmin**)
 📦 Gradle
 🐱 Git & GitHub
