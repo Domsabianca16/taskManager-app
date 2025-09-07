@@ -5,7 +5,7 @@ Task Manager is a Spring Boot web application that allows users to manage tasks 
 ## Features
 
 ✅ **Full CRUD operations**: Create, Read, Update, Delete  
-✅ **3-tier architecture**:  
+✅ **3-tier architecture**:
 - Presentation Layer: Spring Rest APIs -> @Controller which handles HTTP Requests  
 - Business Logic Layer: @Service  
 - Data Access Layer: @Repository -> for interaction with the database using JPA  
