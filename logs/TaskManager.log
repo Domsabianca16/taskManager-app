@@ -1,0 +1,12 @@
+17:39:31.147 [main] INFO  com.example.TaskManagerApplication - Starting TaskManagerApplication using Java 17.0.16 with PID 17344 (C:\work\repos\TaskManagerApp\TaskManager\build\classes\java\main started by Bianca in C:\work\repos\TaskManagerApp\TaskManager) <no request,no span> 
+17:39:31.150 [main] DEBUG com.example.TaskManagerApplication - Running with Spring Boot v3.5.5, Spring v6.2.10 <no request,no span> 
+17:39:31.154 [main] INFO  com.example.TaskManagerApplication - No active profile set, falling back to 1 default profile: "default" <no request,no span> 
+17:39:42.454 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning <no request,no span> 
+17:39:44.325 [main] INFO  com.example.TaskManagerApplication - Started TaskManagerApplication in 14.192 seconds (process running for 16.019) <no request,no span> 
+17:41:42.140 [main] INFO  com.example.TaskManagerApplication - Starting TaskManagerApplication using Java 17.0.16 with PID 13272 (C:\work\repos\TaskManagerApp\TaskManager\build\classes\java\main started by Bianca in C:\work\repos\TaskManagerApp\TaskManager) <no request,no span> 
+17:41:42.146 [main] DEBUG com.example.TaskManagerApplication - Running with Spring Boot v3.5.5, Spring v6.2.10 <no request,no span> 
+17:41:42.150 [main] INFO  com.example.TaskManagerApplication - No active profile set, falling back to 1 default profile: "default" <no request,no span> 
+17:41:54.279 [main] INFO  com.example.TaskManagerApplication - Started TaskManagerApplication in 13.193 seconds (process running for 14.854) <no request,no span> 
+17:42:40.221 [main] INFO  com.example.TaskManagerApplication - Starting TaskManagerApplication using Java 17.0.16 with PID 9168 (C:\work\repos\TaskManagerApp\TaskManager\build\classes\java\main started by Bianca in C:\work\repos\TaskManagerApp\TaskManager) <no request,no span> 
+17:42:40.226 [main] INFO  com.example.TaskManagerApplication - No active profile set, falling back to 1 default profile: "default" <no request,no span> 
+17:42:51.899 [main] INFO  com.example.TaskManagerApplication - Started TaskManagerApplication in 12.598 seconds (process running for 14.475) <no request,no span> 
