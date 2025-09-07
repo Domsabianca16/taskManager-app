@@ -20,7 +20,7 @@ Task Manager is a Spring Boot web application that allows users to manage tasks 
 ✅ Spring Boot Actuator
 ⚫️ Swagger
 📑 Logback
-🐘 PostgreSQL (managed via **DBeaver** or **pgAdmin**)
+🐘 PostgreSQL (managed via **DBeaver** & **pgAdmin**)
 📦 Gradle
 🐱 Git & GitHub
 
